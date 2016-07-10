@@ -1,0 +1,2 @@
+# mcmd
+Minecraft Management Daemon
