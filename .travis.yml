@@ -9,4 +9,4 @@ branches:
     - master
 script:
   - export TEST_TARGET="-m test.runtests"
-  - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then python -m $TEST_TARGET; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then python $TEST_TARGET; fi
