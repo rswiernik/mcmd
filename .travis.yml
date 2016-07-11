@@ -7,6 +7,10 @@ python:
 branches:
   only:
     - master
+
+install:
+  - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then pip install mock
+
 script:
   - export TEST_TARGET="-m test.runtests"
   - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then python $TEST_TARGET; fi
