@@ -11,9 +11,6 @@ import logging
 import grp
 
 
-LOG_FORMAT = '%(asctime)-15s %(message)s'
-LOG_DATE = '%m/%d/%Y %H:%M:%S %Z  '
-LOG_LVL = logging.INFO
 
 
 def main(args):
@@ -27,15 +24,21 @@ def main(args):
     #    type=str, default='tmk', help='Fireware layout style to output to file')
     args = parser.parse_args()
 
+    LOG_FORMAT = '%(asctime)-15s %(message)s'
+    LOG_DATE = '%m/%d/%Y %H:%M:%S %Z  '
+    LOG_LVL = logging.INFO
+
     if args.verbose:
         LOG_LVL = logging.DEBUG
     logging.basicConfig(format=LOG_FORMAT, datefmt=LOG_DATE, level=LOG_LVL)
     logging.debug('Verbose output enabled')
 
-    logging.debug("Starting mcmd - {}".format(""))
+    SERVER_ADDRESS = "/tmp/mcmd_socket"
+
+    logging.debug("Starting mcmd on port: {0}".format(SERVER_ADDRESS))
 
 
-    logging.debug("Stopping - {}".format(""))
+    logging.debug("Stopping mcmd")
     exit(0)
 
 if __name__ == '__main__':
