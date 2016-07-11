@@ -11,17 +11,17 @@ import logging
 import grp
 
 
+class mcm_server:
+    def __init__(self, name="mc_server"):
+        # this is a placeholder
 
+    def start(self):
+        # java -Xms1024M -Xmx3072M -jar minecraft_server.1.10.2.jar nogui
+        SERVER_START_COMMAND="java -Xms1024M -Xmx3072M -jar minecraft_server.1.10.2.jar nogui"
 
 def main(args):
     parser = argparse.ArgumentParser(description='')
     parser.add_argument('-v', '--verbose', help='enable verbose output', action='store_true')
-    #parser.add_argument('-k', '--keyboard', action='store', dest='kbl_file',
-    #    type=str, help='The file path to the kbl file you would like to use.')
-    #parser.add_argument('-o', '--output-file', action='store', dest='outputFilename',
-    #    type=str, default='output.layout', help='Layout output filename')
-    #parser.add_argument('-f', '--firmware', action='store', dest='firmwareName',
-    #    type=str, default='tmk', help='Fireware layout style to output to file')
     args = parser.parse_args()
 
     LOG_FORMAT = '%(asctime)-15s %(message)s'
@@ -36,6 +36,7 @@ def main(args):
     SERVER_ADDRESS = "/tmp/mcmd_socket"
 
     logging.debug("Starting mcmd on port: {0}".format(SERVER_ADDRESS))
+
 
 
     logging.debug("Stopping mcmd")
