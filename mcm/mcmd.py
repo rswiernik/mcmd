@@ -3,6 +3,7 @@
 #   This file contains the source for the (M)ine(c)raft (M)anagement (D)aemon
 
 import os
+import sys
 import socket
 import time
 import argparse
@@ -34,7 +35,7 @@ def main(args):
     logging.debug("Starting mcmd - {}".format(""))
 
 
-    logging.debug("Stopping - {}".format("")) 
+    logging.debug("Stopping - {}".format(""))
     exit(0)
 
 if __name__ == '__main__':
