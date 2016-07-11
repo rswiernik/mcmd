@@ -1,0 +1,12 @@
+# File: .travis.yml
+# https://travis-ci.org/rswiernik/mcmd
+
+language: python
+python:
+  - "2.7"
+branches:
+  only:
+    - master
+script:
+  - export TEST_TARGET="-m test.runtests"
+  - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then python -m $TEST_TARGET; fi
