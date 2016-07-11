@@ -9,7 +9,7 @@ branches:
     - master
 
 install:
-  - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then pip install mock
+  - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then pip install mock; fi
 
 script:
   - export TEST_TARGET="-m test.runtests"
